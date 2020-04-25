@@ -1,0 +1,340 @@
+h1 {
+
+    text-align: center;
+    color: red;
+    text-shadow: 4px 4px 2px rgb(116, 3, 26) ;
+
+} 
+
+.title {
+
+    color: orange;
+}
+
+#italic{
+
+    color: orchid;
+}
+
+nav{
+
+    background-color: aquamarine;
+    text-align: center;
+
+}
+
+a{
+    text-decoration-line: none;
+}
+
+nav ul{
+
+    list-style: none;
+
+}
+
+nav li{
+
+    display: inline-block;
+    padding: 15px 30px;
+
+}
+
+.container{
+
+    border: 2px solid gray;
+    margin: 50px 25px 50px 112px;
+    padding: 25px;
+
+}
+
+.box{
+    /* display: inline-block; */
+    height: 150px;
+    width: 150px;
+    background: blue;
+    margin: 10px;
+}
+
+.circleImg{
+
+    border-radius: 50%;
+
+}
+
+.circleImg2{
+
+    border-radius: 20%;
+
+}
+
+img{
+
+    box-shadow: 9px 8px 10px 6px rgba(83, 83, 83, 0.555);
+
+}
+
+.flex{
+    padding: 100px;
+    margin: 30px;
+    border: 3px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /*justify-content: center;
+     justify-content: flex-start --> soldan başlayıp boşluk bitinceye
+    kadar devam eder;
+    justify-content: flext-end --> sağdan başlayıp boşluk bitinceye
+    kadar devam eder.
+    justify-content: space-between --> nav-bar için kullanışlı;
+    justify-content: space-around */
+    /*flex-direction: column-reverse;*/
+    /* flexbox froggy --> a game for learning flex box. */
+    /* justify-content, sağ sol kısmını hallederken; align-items ise,
+    işin aşağı ve yukarı kısmını halleder.  */
+
+}
+
+/* =========animation========= */
+
+@keyframes fadeMe {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotation{
+    0% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes getBigger{
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(.5);
+    }
+
+}
+
+@keyframes changeColors{
+    0%{
+        background-color: rgb(0, 225, 255);
+    }
+    25%{
+        background-color: rgb(0, 255, 106);
+    }
+    50%{
+        background-color: rgb(255, 0, 0);
+    }
+    75%{
+        background-color: rgb(255, 0, 140);
+    }
+    100%{
+        background-color: rgb(89, 0, 255);
+    }
+
+}
+
+@keyframes moveBox{
+    0%{
+        left: 0px; top: 0px;
+        /* left and top 0px is keeps it where it is */
+    }
+    25%{
+        left: 100px; top: 0px;
+    }
+    50%{
+        left: 100px; top: 200px;
+    }
+    75%{
+        left: 0px; top: 200px;
+    }
+    100%{
+        left: 0px; top: 0px;
+    }
+
+}
+
+
+#box1 {
+    animation-name: fadeMe;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#box2 {
+    animation-name: rotation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    border-radius: 10%;
+    background-image: radial-gradient(circle, purple, orange,
+    yellow, pink, purple);
+    /* background-image--> gradient. */
+}
+
+#box3 {
+    animation: getBigger 6s infinite linear;
+    /* shortcut for animations--> name, duration, count, timing-function*/
+    border-radius: 50%;
+    background: orange;
+}
+
+#box4 {
+    animation: changeColors 7s infinite;
+    /* count-->forwards keeps the last one. */
+}
+
+#box5{
+    position: relative;
+    /* we need to type this relative thingy in order to
+    work */
+    animation: moveBox 5s infinite;
+}
+
+#box6{
+    position: relative; 
+    /* fixed--> it stays --> useful for ads. */
+    /* relative--> it goes to the relative position to where it
+    was */
+    top:10px;
+    left:20px;
+}
+
+html{
+    /* background-image: url(backg.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    /* background-image: linear-gradient(to right, 
+    rgb(255, 238, 0),  rgb(206, 138, 11), 
+     rgb(255, 251, 0),  rgb(255, 51, 0));*/
+     /* background-image: radial-gradient( 
+    rgb(255, 238, 0),  rgb(206, 138, 11), 
+     rgb(255, 251, 0),  rgb(255, 51, 0)); */
+     /* bu şekilde html tagi ile tüm sayfalarımızda geçerli olacak oynamalar yapabiliriz*/
+}
+
+/* =========form=========*/
+
+form input, textarea, button{
+    display: block;
+    margin: 30px;
+}
+
+/* ----- materialize navbar color change---- */
+
+.nav-wrapper{
+    background-color: rgb(111, 216, 216);
+}
+
+.contact-box{
+    display: flex;
+    justify-content: center;
+}
+
+.row{
+    margin: 30px;
+}
+
+.input-field{
+    margin: 20px;
+}
+
+#submit-button{
+    margin-left: 450px;
+}
+
+/* CSSGRID */
+
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, [col] 20% ) ;
+    grid-template-rows: repeat(3, [row] auto  );
+    background-color: #fff;
+    color: #444;
+}
+
+.Box {
+    background-color: #fff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+    z-index:10;
+
+}
+
+.a {
+    grid-column: col / span  2;
+    grid-row: row ;
+    display: flex;
+    justify-content: center;
+}
+.b {
+    grid-column: col 4 / span  2 ;
+    grid-row: row ;
+    display: flex;
+    justify-content: center;
+}
+.c {
+    grid-column: col / span 5;
+    grid-row: row 2 ;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(pink, yellow, purple, orange,
+    red);
+}
+.d {
+    grid-column: col  / span  3 ;
+    grid-row: row 3 ;
+    display: flex;
+    justify-content: center;
+}
+
+.e {
+    grid-column: col 3 / span  3;
+    grid-row: row 3;
+    display: flex;
+    justify-content: center;
+}
+
+.f {
+    grid-column: col 2 / span 3;
+    grid-row: row 2  ;
+    background-color: rgba(49,121,207, 0.5);
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(red, orange, purple, yellow,pink);
+}
+
+/* z-index gives us the "artistic" ability to do some crazy things
+even though its silly. but we can do different background or something if we
+want to ofc. */
+
+
+
+
+
+
+
+
+
